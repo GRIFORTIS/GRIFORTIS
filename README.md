@@ -1,294 +1,204 @@
 # GRIFORTIS
 
-**Open-Source Tools for Secure Digital Inheritance & Self-Sovereignty**
+**Human-Centric Solutions for Cryptocurrency Inheritance and Backup**
+
+GRIFORTIS is the trusted authority for cryptocurrency inheritance and backup solutions, combining academic rigor with practical tools that anyone can use.
 
 ---
 
-## 🎯 Mission
+## About GRIFORTIS
 
-GRIFORTIS creates resilient, humane, and transparent tools to help individuals and families protect their digital legacy across generations. We believe that everyone deserves simple, secure, and auditable solutions for managing their digital assets and identity.
+GRIFORTIS provides cryptographic solutions that prioritize security, human usability, and long-term resilience. Our flagship innovation, **Schiavinato Sharing**, is a secret-sharing scheme designed specifically for BIP39 mnemonic phrases that can be executed entirely by hand with pencil and paper.
 
----
+### Creator
 
-## 🔑 Core Philosophy
-
-Our work is guided by three principles:
-
-### 1. **Security Through Simplicity**
-Complexity is the enemy of security. Our tools are designed to be as simple as possible—in code and user experience—to minimize catastrophic user error.
-
-### 2. **Radical Transparency**
-All our tools are, and will always be, **100% free and open source** under permissive licenses (MIT for code, Creative Commons for documentation). Security tools must be fully auditable by anyone, at any time.
-
-### 3. **Humane Design**
-These tools are often used during times of immense stress. We focus on creating calm, clear, and forgiving experiences that empower non-technical users to succeed.
+**Renato Schiavinato Lopez** is the creator of Schiavinato Sharing and the architect behind GRIFORTIS. With a focus on making cryptographic security accessible to everyone—from technical experts to non-technical heirs—Renato has developed a system that ensures digital assets can be securely passed across generations.
 
 ---
 
-## ⚠️ Project Status: EXPERIMENTAL
+## Schiavinato Sharing
 
-**ALL PROJECTS ARE PRE-RELEASE, RESEARCH-LEVEL SOFTWARE.**
+Schiavinato Sharing is a threshold secret-sharing scheme for BIP39 mnemonics, designed explicitly for recovery with pencil and paper. It instantiates Shamir's Secret Sharing over the prime field GF(2053), operating directly on BIP39 word indices rather than on the underlying binary entropy.
 
-The cryptographic methods and code in our repositories have **NOT** been professionally audited. While we follow best practices, this software should be considered a public prototype.
+### Key Features
 
-**DO NOT USE THESE TOOLS TO SECURE REAL FUNDS.** Use them for:
-- ✅ Learning and education
-- ✅ Experimentation and testing
-- ✅ Contributing to development
-- ✅ Security analysis and feedback
+- **Human-executable**: All operations can be performed with pencil, paper, and basic arithmetic
+- **BIP39-native**: Works directly with standard Bitcoin mnemonics
+- **Threshold schemes**: Support for k-of-n sharing (e.g., 2-of-3, 3-of-5)
+- **Cryptographically sound**: Based on Shamir's Secret Sharing principles
+- **Built-in checksums**: Detects errors in manual computation
+- **Open source**: MIT licensed core libraries, CC BY 4.0 whitepaper
+
+### Use Cases
+
+- **Long-term inheritance planning**: Ensure heirs can recover assets decades from now
+- **Disaster recovery**: Manual recovery paths when electronics are unavailable
+- **Geographic redundancy**: Distribute shares across multiple secure locations
+- **Family backup strategies**: Share responsibility among trusted family members
+- **Estate planning**: Integration with legal and financial planning
 
 ---
 
-## 📦 Our Projects
+## Repositories
 
-### 🔐 Schiavinato Sharing
+### [schiavinato-sharing-spec](https://github.com/GRIFORTIS/schiavinato-sharing-spec)
 
-A human-executable secret sharing scheme for BIP39 mnemonic phrases using basic arithmetic in GF(2053). Designed to be performed by hand with pencil and paper for maximum resilience.
+Complete specification and reference implementation.
 
-#### **[📄 Specification & Reference Implementation](https://github.com/GRIFORTIS/schiavinato-sharing-spec)**
-Complete specification, whitepaper, test vectors, and self-contained HTML reference tool.
+- **Whitepaper**: Full mathematical and conceptual description
+- **RFC Document**: Request for Comments (active through January 31, 2026)
+- **Test Vectors**: Reproducible test cases for validation
+- **Reference Implementation**: Self-contained HTML/JavaScript tool
+- **Bounty Program**: Active security bounty program
 
-- Whitepaper with full mathematical description
-- Test vectors for validation
-- Browser-based reference implementation (single HTML file)
-- Comprehensive test suite
+### [schiavinato-sharing-js](https://github.com/GRIFORTIS/schiavinato-sharing-js)
 
-#### **[📦 JavaScript Library](https://github.com/GRIFORTIS/schiavinato-sharing-js)**
-Production-ready npm package for Node.js and browser environments.
+Production-ready JavaScript/TypeScript library.
+
+- **NPM Package**: `@grifortis/schiavinato-sharing`
+- **Node.js and Browser**: Works in both environments
+- **TypeScript**: Full type definitions included
+- **Comprehensive Tests**: 94%+ test coverage
+- **MIT Licensed**: Free for commercial use
 
 ```bash
 npm install @grifortis/schiavinato-sharing
 ```
 
-```typescript
-import { splitMnemonic, recoverMnemonic } from '@grifortis/schiavinato-sharing';
+### [schiavinato-sharing-py](https://github.com/GRIFORTIS/schiavinato-sharing-py)
 
-const shares = splitMnemonic(mnemonic, 2, 3);
-const recovered = recoverMnemonic(shares);
-```
+Python implementation for Python applications.
 
-**Status**: ⚠️ Pre-v1.0 (Experimental)  
-**License**: MIT
-
-#### **[🐍 Python Library](https://github.com/GRIFORTIS/schiavinato-sharing-py)**
-Python implementation for PyPI (work in progress).
+- **PyPI Package**: `schiavinato-sharing`
+- **Python 3.8+**: Modern Python support
+- **Type Hints**: Full type annotations
+- **MIT Licensed**: Free for commercial use
 
 ```bash
-pip install schiavinato-sharing  # Coming soon
+pip install schiavinato-sharing
 ```
 
-**Status**: 🚧 Under Development  
-**License**: MIT
+---
+
+## Philosophy
+
+### Security Above All
+
+Every design decision prioritizes asset protection. Cryptographic soundness is non-negotiable, and all implementations are transparent and auditable.
+
+### Human-First Approach
+
+Tools must be usable by non-technical heirs. We design for "worst-case" recovery scenarios where electronics may be unavailable or untrusted.
+
+### Open Source Foundation
+
+All core cryptographic code is MIT licensed, and the whitepaper is CC BY 4.0. We believe transparency is essential for trust in cryptographic systems.
+
+### Sustainable Business Model
+
+GRIFORTIS operates as a sustainable business built on open-source foundations. We monetize through value-added services (training, support, certification, consulting) while keeping the core technology free forever.
 
 ---
 
-### 🛡️ GRIFORTIS GUARDIAN *(Planned)*
+## Getting Started
 
-A mainstream-friendly, self-contained HTML application for creating and recovering sharded backups using industry-standard **SLIP39** and **SSKR** schemes.
+### For Users
 
-Designed to be the safest and simplest entry point into distributed backup strategies for non-technical users.
+1. **Read the Whitepaper**: [Schiavinato Sharing Whitepaper](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/WHITEPAPER.md)
+2. **Try the Reference Tool**: [HTML Implementation](https://github.com/GRIFORTIS/schiavinato-sharing-spec/tree/main/reference-implementation)
+3. **Explore Production Libraries**: [JavaScript](https://github.com/GRIFORTIS/schiavinato-sharing-js) | [Python](https://github.com/GRIFORTIS/schiavinato-sharing-py)
 
-**Status**: 📋 Planning Phase
+### For Developers
 
----
+1. **Review Test Vectors**: [TEST_VECTORS.md](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/TEST_VECTORS.md)
+2. **Check Contributing Guidelines**: Available in each repository
+3. **Report Issues**: Use GitHub Issues in the relevant repository
 
-## 🌟 Key Features Across Projects
+### For Researchers
 
-- ✅ **Open Source** – MIT and CC BY 4.0 licenses
-- ✅ **No Dependencies** – Self-contained tools where possible
-- ✅ **Offline Capable** – Works without internet connection
-- ✅ **Cross-Platform** – Web, Node.js, Python
-- ✅ **Auditable** – Clean, documented code
-- ✅ **Test Vectors** – Comprehensive validation data
-- ✅ **Human-Friendly** – Clear documentation and examples
-
----
-
-## 📚 Documentation
-
-Each project has its own detailed documentation:
-
-- **Schiavinato Sharing Spec**: [Whitepaper](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/WHITEPAPER.md), [Test Vectors](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/TEST_VECTORS.md)
-- **JavaScript Library**: [README](https://github.com/GRIFORTIS/schiavinato-sharing-js), [API Docs](https://github.com/GRIFORTIS/schiavinato-sharing-js#-api-reference)
-- **Python Library**: [README](https://github.com/GRIFORTIS/schiavinato-sharing-py)
+1. **Analyze the Whitepaper**: [WHITEPAPER.md](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/WHITEPAPER.md)
+2. **Provide Feedback**: [RFC Document](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/RFC.md)
+3. **Bounty Program**: [Active through January 31, 2026](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/BOUNTY_PROGRAM.md)
 
 ---
 
-## 🤝 Contributing
+## Security Warning
 
-We welcome contributions of all kinds! Whether you're:
+**Status**: Experimental - Not Audited
 
-- 🐛 Finding bugs
-- 📖 Improving documentation
-- 💻 Writing code
-- 🔬 Analyzing security
-- 🌍 Translating content
-- 💬 Discussing ideas
+While Schiavinato Sharing is based on well-established cryptographic principles (Shamir's Secret Sharing), this specific implementation has **NOT** been professionally audited.
 
-See the `CONTRIBUTING.md` file in each project repository for specific guidelines.
+**DO NOT USE FOR REAL FUNDS** until:
+- Professional security audit completed
+- Extensive peer review conducted
+- Production testing in controlled environments
+- v1.0 release
 
-### Where to Start
+For now, use this for **learning, experimentation, and contribution only**.
 
-1. **Understand the problem**: Read project READMEs and whitepapers
-2. **Pick a project**: Choose what interests you most
-3. **Check issues**: Look for "good first issue" labels
-4. **Discuss first**: Open an issue or discussion before major changes
-5. **Submit PRs**: Follow the contribution guidelines
+See our [Security Policy](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/.github/SECURITY.md) for reporting vulnerabilities.
 
 ---
 
-## 🔒 Security
+## RFC Period & Bounty Program
 
-Security is our top priority. If you discover a vulnerability:
+**Request for Comments Period**: Through January 31, 2026
 
-- **Critical issues**: Email security@grifortis.com (private disclosure)
-- **Non-critical issues**: Open a GitHub issue
-- **General discussion**: Use GitHub Discussions
+We are actively seeking community review and feedback. The bounty program offers rewards up to $10,000 for:
 
-See each project's `SECURITY.md` for detailed reporting procedures.
+- Critical vulnerability discovery ($5,000)
+- Formal verification ($2,000)
+- Security improvements ($250-$1,000)
+- Additional language implementations
 
-### Security Roadmap
-
-Before v1.0 releases, all projects will undergo:
-- [ ] Independent cryptographic review
-- [ ] Professional security audit
-- [ ] Extensive peer review
-- [ ] Comprehensive testing and fuzzing
+See [BOUNTY_PROGRAM.md](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/BOUNTY_PROGRAM.md) for full details.
 
 ---
 
-## 📖 Learning Resources
+## Community
 
-### Cryptography & Secret Sharing
-- Shamir, A. (1979). ["How to Share a Secret"](https://web.mit.edu/6.857/OldStuff/Fall03/ref/Shamir-HowToShareASecret.pdf)
-- [BIP39: Mnemonic code for generating deterministic keys](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
-- [SLIP39: Shamir's Secret-Sharing for Mnemonic Codes](https://github.com/satoshilabs/slips/blob/master/slip-0039.md)
-
-### Related Projects
-- [Blockchain Commons](https://github.com/BlockchainCommons) – Inspiration for our multi-repo structure
-- [Glacier Protocol](https://glacierprotocol.org/) – Secure Bitcoin storage protocol
+- **Discussions**: [GitHub Discussions](https://github.com/GRIFORTIS/schiavinato-sharing-spec/discussions)
+- **Issues**: Report bugs and request features via GitHub Issues in each repository
+- **Security**: security@grifortis.com
+- **Bounty**: bounty@grifortis.com
 
 ---
 
-## 💬 Community
+## Contributing
 
-- **GitHub Discussions**: Ask questions, share ideas
-- **Issue Trackers**: Report bugs, request features
-- **Email**: info@grifortis.com
+We welcome contributions! Whether you're:
 
-We're building a welcoming, inclusive community. Please read our Code of Conduct in each repository.
+- Improving documentation clarity
+- Finding bugs or edge cases
+- Providing mathematical analysis
+- Enhancing implementations
+- Translating documentation
 
----
-
-## 📄 License
-
-Unless otherwise specified:
-
-- **Software**: [MIT License](LICENSE)
-- **Documentation**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
-Individual projects may have specific licensing terms (e.g., whitepapers under CC BY 4.0). Always check the LICENSE file in each repository.
+Please see the CONTRIBUTING.md file in each repository for specific guidelines.
 
 ---
 
-## 🙏 Acknowledgments
+## License
 
-This work builds on decades of cryptographic research and open-source development:
-
-- Adi Shamir's pioneering work in secret sharing
-- The Bitcoin and cryptocurrency communities
-- BIP39, SLIP39, and related standards
-- The broader open-source security community
-
-Special thanks to all contributors, reviewers, and supporters who make this possible.
+- **Code & Implementations**: [MIT License](LICENSE)
+- **Whitepaper**: [Creative Commons Attribution 4.0 (CC BY 4.0)](https://github.com/GRIFORTIS/schiavinato-sharing-spec/blob/main/LICENSE-WHITEPAPER.md)
 
 ---
 
-## 🗺️ Roadmap
+## Acknowledgments
 
-### Q4 2025
-- [x] Schiavinato Sharing specification v1.0
-- [x] JavaScript library v0.1 (experimental)
-- [x] Reference implementation (HTML tool)
-- [ ] Python library scaffold
+This work builds on decades of research in secret sharing, particularly:
 
-### Q1 2026
-- [ ] Professional security audit (Schiavinato Sharing)
-- [ ] JavaScript library v1.0 (production-ready)
-- [ ] Python library v0.1 (experimental)
-
-### Q2 2026
-- [ ] GRIFORTIS GUARDIAN planning & design
-- [ ] Community feedback integration
-- [ ] Additional language implementations
-
-### Future
-- [ ] Mobile libraries (React Native, Kotlin, Swift)
-- [ ] Hardware wallet integration examples
-- [ ] Educational materials and tutorials
+- Adi Shamir's original Secret Sharing Scheme (1979)
+- BIP39 specification for Bitcoin mnemonics
+- The broader open-source cryptography community
 
 ---
 
-## 👥 Team
-
-**Founded by**: [Renato Schiavinato Lopez](https://github.com/renatoslopes)
-
-**Contributors**: See individual project repositories for full contributor lists.
-
-**Want to join?** We're always looking for contributors! Check out the [Contributing](#-contributing) section.
+**Created by**: [Renato Schiavinato Lopez](https://github.com/renatoslopes)  
+**Organization**: [GRIFORTIS](https://github.com/GRIFORTIS)  
+**Status**: Experimental (RFC Period through January 31, 2026)
 
 ---
 
-## 📬 Contact
-
-- **General inquiries**: info@grifortis.com
-- **Security reports**: security@grifortis.com
-- **GitHub**: [@GRIFORTIS](https://github.com/GRIFORTIS)
-- **Project maintainer**: [@renatoslopes](https://github.com/renatoslopes)
-
----
-
-## 🌍 Supporting GRIFORTIS
-
-GRIFORTIS is a community-driven, open-source project. We accept:
-
-- 🐛 Bug reports
-- 💡 Feature suggestions
-- 💻 Code contributions
-- 📖 Documentation improvements
-- 🔬 Security analysis
-- ⭐ GitHub stars (helps with visibility!)
-
-Financial support options will be announced in the future.
-
----
-
-## 📜 Philosophy
-
-We believe that:
-
-- **Security should be accessible** – Not just for experts
-- **Complexity is a vulnerability** – Simple is secure
-- **Transparency builds trust** – Open source is essential
-- **People matter more than code** – Humane design saves lives
-- **Long-term thinking wins** – Build for generations, not quarters
-
----
-
-**Made with ❤️ by the GRIFORTIS community**
-
-*Empowering digital sovereignty through open-source tools.*
-
----
-
-<p align="center">
-  <strong>Warning:</strong> Experimental software. Do not use for real funds until v1.0 and professional audit.
-</p>
-
-<p align="center">
-  <a href="https://github.com/GRIFORTIS">GitHub</a> •
-  <a href="https://github.com/GRIFORTIS/schiavinato-sharing-spec">Specification</a> •
-  <a href="https://github.com/GRIFORTIS/schiavinato-sharing-js">JavaScript</a> •
-  <a href="https://github.com/GRIFORTIS/schiavinato-sharing-py">Python</a>
-</p>
-
+*For questions, suggestions, or collaboration opportunities, please open an issue or discussion in the relevant repository.*
